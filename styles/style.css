@@ -62,7 +62,6 @@ ol {
   height: 100%;
 }
 
-/* Левая часть - видео и форма */
 .result {
   grid-column: 1;
   grid-row: 1;
@@ -84,7 +83,6 @@ ol {
   object-position: center;
 }
 
-/* Правая часть - карточки */
 .content__details {
   grid-column: 2;
   grid-row: 1;
@@ -107,6 +105,7 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   flex-grow: 1;
   overflow-y: auto;
   height: 298px;
@@ -175,11 +174,15 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  overflow: hidden;
+  max-height: 64.8px
 }
 
 .content__video-card-thumbnail {
@@ -189,7 +192,6 @@ ol {
   object-position: center;
 }
 
-/* Форма поиска */
 .search-form {
   display: flex;
   flex-direction: column;
@@ -206,7 +208,6 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
 }
@@ -216,11 +217,6 @@ ol {
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  width: fit-content;
-}
-
-.search-form__label:hover .search-form__label-text {
-  text-decoration: underline;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -269,12 +265,11 @@ ol {
   left: 1px;
 }
 
-/* Кнопки */
 .button {
   background: transparent;
   border: 1px solid #fff;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  height: 34px;
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
@@ -300,16 +295,13 @@ ol {
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   align-self: flex-end;
 }
 
 .more-button {
   width: 100%;
-  height: 34px;
 }
 
-/* Визуально скрытые элементы */
 .visually-hidden {
   position: absolute;
   width: 1px;
